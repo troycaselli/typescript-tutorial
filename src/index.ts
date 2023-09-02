@@ -26,3 +26,25 @@ function kgToLbs(weight: number | string): number {
 
 console.log(kgToLbs(10));
 console.log(kgToLbs("10kg"));
+
+// INTERSECTION TYPES
+type Draggable = {
+  drag: () => void;
+};
+
+type Resizable = {
+  resize: () => void;
+};
+
+// alias is more than one type
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+  drag: () => {},
+  resize: () => {},
+};
+
+// LITERAL TYPES
+// variable value is limited to specific values
+type Quantity = 50 | 100 | "50" | "100";
+let quantity: Quantity = 50;
